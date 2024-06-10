@@ -15,7 +15,7 @@ class MissionNode(Merlin2FsmMissionNode):
     END = "end"
     HAS_NEXT = "has_next"
 
-    def __init__(self) -> None:
+    def __init__(self):
 
         super().__init__("room_patrol_mission_node")
         
@@ -77,7 +77,7 @@ class MissionNode(Merlin2FsmMissionNode):
             PddlPropositionDto(room_patrolled, [self.room2], is_goal=True),
             PddlPropositionDto(room_patrolled, [self.room3], is_goal=True),
             PddlPropositionDto(room_patrolled, [self.room4], is_goal=True),
-            PddlPropositionDto(room_patrolled, [self.room5], is_goal=True),   
+            PddlPropositionDto(room_patrolled, [self.room5], is_goal=True),
         ]
         return SUCCEED
 
@@ -100,5 +100,5 @@ def main():
     node.join_spin()
     rclpy.shutdown()
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
